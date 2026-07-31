@@ -15,9 +15,6 @@
   "build": {
     "appId": "hu.astrallegacy.launcher",
     "productName": "Astral Launcher",
-    "directories": {
-      "output": "dist"
-    },
     "linux": {
       "target": [
         "AppImage"
