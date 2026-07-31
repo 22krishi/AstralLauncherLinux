@@ -1,0 +1,55 @@
+{
+  "name": "astral-launcher-12111",
+  "version": "1.0.0",
+  "description": "AstralLauncher 1.21.11 Minecraft Launcher",
+  "homepage": "https://astrallegacy.hu",
+  "author": {
+    "name": "Astral Legacy",
+    "email": "22krishi.info@gmail.com"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "hu.astrallegacy.launcher",
+    "productName": "Astral Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "assets/astral.png",
+      "category": "Game"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/astral.ico",
+      "uninstallerIcon": "assets/astral.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "assets/**/*",
+      "minecraft/**/*"
+    ],
+    "asar": true,
+    "compression": "maximum"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.2",
+    "mysql2": "^3.6.0",
+    "unzipper": "^0.12.5"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.0",
+    "javascript-obfuscator": "^5.5.0"
+  }
+}
