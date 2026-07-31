@@ -21,11 +21,10 @@ jobs:
 
     - name: Függőségek telepítése és Linux Build
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CI: false
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         npm install
-        npx electron-builder --linux --publish never
+        npx electron-builder --linux
 
     - name: Elkészült fájlok feltöltése (Artifacts)
       uses: actions/upload-artifact@v4
