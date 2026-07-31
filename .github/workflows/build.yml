@@ -18,6 +18,8 @@ jobs:
         node-version: 20
 
     - name: Függőségek telepítése és Linux Build
+      env:
+        GH_TOKEN: none
       run: |
         npm install
         npx electron-builder --linux
