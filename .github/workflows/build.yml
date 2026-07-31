@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Repository letöltése
@@ -19,7 +21,7 @@ jobs:
 
     - name: Függőségek telepítése és Linux Build
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
         npx electron-builder --linux --publish never
