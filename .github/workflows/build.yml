@@ -24,7 +24,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm install
-        npx electron-builder --linux --c.publish=null
+        npx electron-builder --linux -c.publish=null
 
     - name: Elkészült fájlok feltöltése (Artifacts)
       uses: actions/upload-artifact@v4
