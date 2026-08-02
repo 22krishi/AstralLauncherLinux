@@ -21,7 +21,7 @@ jobs:
 
     - name: Függőségek telepítése és Linux Build
       env:
-        CI: false
+        GH_TOKEN: "bypass_token_for_local_build"
       run: |
         npm install
         npx electron-builder --linux --publish never
