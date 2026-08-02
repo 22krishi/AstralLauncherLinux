@@ -22,7 +22,7 @@ jobs:
     - name: Függőségek telepítése és Linux Build
       run: |
         npm install
-        npx electron-builder --linux --publish never
+        npx electron-builder --linux -p never
 
     - name: Elkészült fájlok feltöltése (Artifacts)
       uses: actions/upload-artifact@v4
