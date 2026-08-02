@@ -1,6 +1,6 @@
 {
   "name": "astral-launcher-12111",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AstralLauncher 1.21.11 Minecraft Launcher",
   "homepage": "https://astrallegacy.hu",
   "author": {
@@ -15,21 +15,33 @@
   "build": {
     "appId": "hu.astrallegacy.launcher",
     "productName": "Astral Launcher",
-    "publish": null,
-    "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "icon": "assets/astral.png",
-      "category": "Game"
+    "directories": {
+      "output": "dist"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "22krishi",
+      "repo": "AstralLinuxLauncherUpdate"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/astral.ico"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "installerIcon": "assets/astral.ico",
-      "uninstallerIcon": "assets/astral.ico",
+      "installerIcon": "assets/astral.png",
+      "uninstallerIcon": "assets/astral.png",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/astral.png",
+      "category": "Game"
     },
     "files": [
       "main.js",
