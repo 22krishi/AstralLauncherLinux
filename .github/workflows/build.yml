@@ -21,8 +21,7 @@ jobs:
 
     - name: Függőségek telepítése és Linux Build
       env:
-        GH_TOKEN: "dummy_token_to_bypass_validation"
-        PUBLISH_VARS_FLAG: "never"
+        CI: false
       run: |
         npm install
         npx electron-builder --linux --publish never
