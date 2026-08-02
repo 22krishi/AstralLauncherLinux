@@ -20,9 +20,12 @@ jobs:
         node-version: 20
 
     - name: Függőségek telepítése és Linux Build
+      env:
+        GH_TOKEN: "dummy_token_to_bypass_validation"
+        PUBLISH_VARS_FLAG: "never"
       run: |
         npm install
-        npx electron-builder --linux -p never
+        npx electron-builder --linux --publish never
 
     - name: Elkészült fájlok feltöltése (Artifacts)
       uses: actions/upload-artifact@v4
