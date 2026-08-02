@@ -22,13 +22,12 @@ jobs:
     - name: Függőségek telepítése és Linux Build
       run: |
         npm install
-        npx electron-builder --linux
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        npx electron-builder --linux --publish never
 
     - name: Elkészült fájlok feltöltése (Artifacts)
       uses: actions/upload-artifact@v4
       with:
         name: linux-packages
-        path: dist/*.AppImage
+        path: |
+          dist/*.AppImage
+          dist/*.deb
