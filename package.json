@@ -18,11 +18,6 @@
     "directories": {
       "output": "dist"
     },
-    "publish": {
-      "provider": "github",
-      "owner": "22krishi",
-      "repo": "AstralLinuxLauncherUpdate"
-    },
     "win": {
       "target": "nsis",
       "icon": "assets/astral.ico"
